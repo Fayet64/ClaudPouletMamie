@@ -441,7 +441,27 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .products-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .products-grid-full {
     margin-bottom: 3rem;
+
+    .supplements-cat { width: 100%; }
+
+    .supplements-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
   }
 
   .product-category {
@@ -504,6 +524,12 @@
       border-left-color: var(--orange-light);
     }
 
+    &.bowl-item {
+      flex-direction: column;
+      align-items: flex-start;
+      .product-desc { color: var(--orange-light); font-style: normal; font-weight: 600; font-size: 0.9rem; }
+    }
+
     .product-info {
       display: flex;
       flex-direction: column;
@@ -555,8 +581,8 @@
 
   .contact-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.2rem;
     margin-bottom: 3rem;
   }
 
@@ -692,7 +718,9 @@
   }
   .presentation .presentation-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
   .produits .products-grid { grid-template-columns: 1fr; }
-  .contact .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .produits .products-grid-3 { grid-template-columns: 1fr; }
+  .produits .products-grid-full .supplements-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact .contact-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 600px) {
@@ -711,7 +739,8 @@
   .navbar .menu-toggle { display: flex; }
   .navbar .navbar-inner { position: relative; }
   .hero .hero-logo { width: 160px; height: 160px; }
-  .contact .contact-grid { grid-template-columns: 1fr 1fr; }
+  .contact .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .produits .products-grid-full .supplements-grid { grid-template-columns: repeat(2, 1fr); }
   .presentation .badges-row { gap: 0.75rem; }
 }
 
