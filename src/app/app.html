@@ -29,17 +29,21 @@
 <section id="accueil" class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge">Rotisserie Artisanale</div>
-    <img src="logo.jpg" alt="Les Poulets de Mamie" class="hero-logo">
-    <h1>Les Poulets<br><span>de Mamie</span></h1>
-    <p class="hero-subtitle">Poulets français fermiers labellisés &amp; Halal,<br>rôtis à la broche avec amour</p>
-    <div class="hero-actions">
-      <button class="btn-primary" (click)="scrollTo('produits')">
-        <i class="fas fa-drumstick-bite"></i> Voir la carte
-      </button>
-      <button class="btn-outline" (click)="scrollTo('contact')">
-        <i class="fas fa-phone"></i> Réserver
-      </button>
+    <div class="hero-layout">
+      <img src="logo.jpg" alt="Les Poulets de Mamie" class="hero-logo">
+      <div class="hero-text">
+        <div class="hero-badge">Rotisserie Artisanale</div>
+        <h1>Les Poulets<br><span>de Mamie</span></h1>
+        <p class="hero-subtitle">Poulets français fermiers labellisés &amp; Halal,<br>rôtis à la broche avec amour</p>
+        <div class="hero-actions">
+          <button class="btn-primary" (click)="scrollTo('produits')">
+            <i class="fas fa-drumstick-bite"></i> Voir la carte
+          </button>
+          <button class="btn-outline" (click)="scrollTo('contact')">
+            <i class="fas fa-phone"></i> Réserver
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <div class="hero-scroll" (click)="scrollTo('presentation')">
