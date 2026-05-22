@@ -1,0 +1,235 @@
+<!-- NAVBAR -->
+<nav class="navbar" [class.scrolled]="scrolled()">
+  <div class="navbar-inner">
+    <div class="navbar-brand" (click)="scrollTo('accueil')">
+      <span class="brand-text">Les Poulets <span class="brand-accent">de Mamie</span></span>
+    </div>
+
+    <button class="menu-toggle" (click)="toggleMenu()" [class.open]="menuOpen()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" [class.open]="menuOpen()">
+      <li *ngFor="let item of [
+        {id:'accueil', label:'Accueil'},
+        {id:'presentation', label:'Présentation'},
+        {id:'produits', label:'Produits'},
+        {id:'contact', label:'Contact'}
+      ]">
+        <a (click)="scrollTo(item.id)" [class.active]="activeSection() === item.id">
+          {{ item.label }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO / ACCUEIL -->
+<section id="accueil" class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Rotisserie Artisanale</div>
+    <h1>Les Poulets<br><span>de Mamie</span></h1>
+    <p class="hero-subtitle">Poulets français fermiers labellisés,<br>rôtis à la broche avec amour</p>
+    <div class="hero-actions">
+      <button class="btn-primary" (click)="scrollTo('produits')">
+        <i class="fas fa-drumstick-bite"></i> Voir la carte
+      </button>
+      <button class="btn-outline" (click)="scrollTo('contact')">
+        <i class="fas fa-phone"></i> Réserver
+      </button>
+    </div>
+  </div>
+  <div class="hero-scroll" (click)="scrollTo('presentation')">
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- PRESENTATION -->
+<section id="presentation" class="presentation">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Notre histoire</span>
+      <h2>La Tradition au<br><span>Feu de Bois</span></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="presentation-grid">
+      <div class="pres-card">
+        <div class="pres-icon"><i class="fas fa-fire"></i></div>
+        <h3>Rôtis à la Broche</h3>
+        <p>Nos poulets sont cuits lentement à la broche selon la tradition, pour une chair tendre et une peau dorée croustillante.</p>
+      </div>
+      <div class="pres-card featured">
+        <div class="pres-logo-wrap">
+          <div class="logo-circle">
+            <i class="fas fa-drumstick-bite logo-icon"></i>
+          </div>
+        </div>
+        <h3>Artix & Environs</h3>
+        <p>Retrouvez-nous au <strong>391, av. de Castille à Artix</strong> et sur les marchés environnants. Nous intervenons aussi pour vos événements privés.</p>
+      </div>
+      <div class="pres-card">
+        <div class="pres-icon"><i class="fas fa-certificate"></i></div>
+        <h3>Label Qualité</h3>
+        <p>Nous sélectionnons uniquement des <strong>poulets français fermiers labellisés</strong>, garantissant une qualité supérieure et un élevage responsable.</p>
+      </div>
+    </div>
+
+    <div class="badges-row">
+      <div class="badge-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Marchés locaux</span>
+      </div>
+      <div class="badge-item">
+        <i class="fas fa-glass-cheers"></i>
+        <span>Événements privés</span>
+      </div>
+      <div class="badge-item">
+        <i class="fas fa-leaf"></i>
+        <span>Produits labellisés</span>
+      </div>
+      <div class="badge-item">
+        <i class="fas fa-heart"></i>
+        <span>Fait avec amour</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUITS -->
+<section id="produits" class="produits">
+  <div class="container">
+    <div class="section-header light">
+      <span class="section-tag">Notre carte</span>
+      <h2>Nos Poulets<br><span>& Accompagnements</span></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="menu-note">
+      <i class="fas fa-star"></i>
+      Poulets marinés — français fermiers labellisés
+    </div>
+
+    <div class="products-grid">
+      <!-- Poulets -->
+      <div class="product-category">
+        <h3 class="cat-title"><i class="fas fa-drumstick-bite"></i> Poulets Rôtis</h3>
+        <div class="product-list">
+          <div class="product-item highlight">
+            <div class="product-info">
+              <span class="product-name">1 Poulet entier</span>
+              <span class="product-tag">mariné *</span>
+            </div>
+            <span class="product-price">19,50 €</span>
+          </div>
+          <div class="product-item">
+            <div class="product-info">
+              <span class="product-name">1/2 Poulet</span>
+              <span class="product-tag">mariné *</span>
+            </div>
+            <span class="product-price">11,00 €</span>
+          </div>
+          <div class="product-item formule">
+            <div class="product-info">
+              <span class="product-name">Formule 1/4 de poulet</span>
+              <span class="product-desc">avec pomme de terre</span>
+              <span class="product-tag">mariné *</span>
+            </div>
+            <span class="product-price">9,00 €</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accompagnements -->
+      <div class="product-category">
+        <h3 class="cat-title"><i class="fas fa-utensils"></i> Accompagnements</h3>
+        <p class="cat-desc">Pommes de terre grenaille persillées / Riz pilaf</p>
+        <div class="product-list">
+          <div class="product-item">
+            <div class="product-info">
+              <span class="product-name">Grande barquette</span>
+            </div>
+            <span class="product-price">5,50 €</span>
+          </div>
+          <div class="product-item">
+            <div class="product-info">
+              <span class="product-name">Petite barquette</span>
+            </div>
+            <span class="product-price">4,00 €</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-cta">
+      <p>Commandez par téléphone ou venez nous retrouver sur place !</p>
+      <button class="btn-primary" (click)="scrollTo('contact')">
+        <i class="fas fa-phone"></i> Passer commande
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Nous trouver</span>
+      <h2>Contact &<br><span>Réservations</span></h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+        <h3>Téléphone</h3>
+        <a href="tel:0761851831" class="contact-link big-phone">07 61 85 18 31</a>
+        <p class="contact-sub">Réservations & Renseignements</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h3>Adresse</h3>
+        <p class="contact-link">391, av. de Castille</p>
+        <p class="contact-link">Artix</p>
+        <p class="contact-sub">+ Marchés environnants</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <h3>Email</h3>
+        <a href="mailto:fatimatemo@live.fr" class="contact-link">fatimatemo&#64;live.fr</a>
+        <p class="contact-sub">Demandes événements privés</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
+        <h3>Facebook</h3>
+        <a href="https://www.facebook.com/lespouletsdemamie" target="_blank" rel="noopener" class="contact-link">lespouletsdemamie</a>
+        <p class="contact-sub">Suivez-nous pour nos actualités</p>
+      </div>
+    </div>
+
+    <div class="services-band">
+      <div class="service-tag">
+        <i class="fas fa-store"></i>
+        <span>Marchés environnants</span>
+      </div>
+      <div class="service-tag">
+        <i class="fas fa-glass-cheers"></i>
+        <span>Événements privés</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Les Poulets de Mamie</div>
+    <p class="footer-label">Poulets français fermiers labellisés</p>
+    <p class="footer-siren">SIREN : 938 088 242</p>
+    <p class="footer-copy">&copy; 2025 Les Poulets de Mamie — Tous droits réservés</p>
+  </div>
+</footer>
