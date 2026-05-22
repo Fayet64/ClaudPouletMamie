@@ -9,8 +9,8 @@
   transition: background 0.3s, box-shadow 0.3s;
 
   &.scrolled {
-    background: var(--brown);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    background: linear-gradient(90deg, var(--purple-dark) 0%, #3A0D60 100%);
+    box-shadow: 0 2px 20px rgba(74,18,114,0.5);
   }
 
   .navbar-inner {
@@ -31,7 +31,18 @@
     color: var(--white);
     text-transform: uppercase;
     letter-spacing: 1px;
-    .brand-accent { color: var(--orange-light); }
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    .brand-accent { color: var(--pink-light); }
+
+    .navbar-logo {
+      height: 42px;
+      width: 42px;
+      object-fit: contain;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
   }
 
   .nav-links {
@@ -54,7 +65,7 @@
 
       &:hover, &.active {
         color: var(--white);
-        background: var(--orange);
+        background: var(--pink);
       }
     }
   }
@@ -90,7 +101,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--brown) 0%, #7A3010 40%, var(--orange-dark) 70%, var(--orange) 100%);
+  background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 30%, var(--pink) 65%, var(--orange) 100%);
   overflow: hidden;
   text-align: center;
 
@@ -99,14 +110,15 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse at 20% 50%, rgba(244,160,48,0.15) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, rgba(232,119,34,0.2) 0%, transparent 50%);
+      radial-gradient(ellipse at 15% 60%, rgba(201,52,122,0.25) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 20%, rgba(232,119,34,0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 90%, rgba(123,47,190,0.2) 0%, transparent 50%);
   }
 
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(30, 10, 0, 0.35);
+    background: rgba(20, 5, 35, 0.3);
   }
 
   .hero-content {
@@ -115,11 +127,21 @@
     padding: 2rem;
   }
 
+  .hero-logo {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-bottom: 1.2rem;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.5));
+    animation: float 4s ease-in-out infinite;
+  }
+
   .hero-badge {
     display: inline-block;
-    background: rgba(244,160,48,0.25);
-    border: 1px solid var(--orange-light);
-    color: var(--orange-light);
+    background: rgba(232,101,156,0.2);
+    border: 1px solid var(--pink-light);
+    color: var(--pink-light);
     font-family: 'Lato', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
@@ -169,6 +191,11 @@
     animation: bounce 2s infinite;
     z-index: 1;
   }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes bounce {
@@ -380,7 +407,7 @@
 // ===== PRODUITS =====
 .produits {
   padding: 6rem 0;
-  background: linear-gradient(160deg, var(--brown) 0%, #5C2000 50%, var(--orange-dark) 100%);
+  background: linear-gradient(160deg, var(--purple-dark) 0%, var(--purple) 40%, var(--pink) 75%, var(--orange-dark) 100%);
 
   .menu-note {
     text-align: center;
@@ -606,14 +633,14 @@
 
 // ===== FOOTER =====
 .footer {
-  background: var(--brown);
+  background: linear-gradient(90deg, var(--purple-dark) 0%, #3A0D60 100%);
   padding: 2.5rem 1.5rem;
   text-align: center;
 
   .footer-brand {
     font-family: 'Oswald', sans-serif;
     font-size: 1.4rem;
-    color: var(--orange-light);
+    color: var(--pink-light);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
